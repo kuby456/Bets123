@@ -406,7 +406,7 @@ const sndStart = document.getElementById("sndStart");
   // מאזין יחיד לכפתור הגרלה
   drawBtn.addEventListener("click", function () {
     // כל 3 הימורים – בקשת סיסמה
-    if (betsSincePassword >= 3) {
+    if (betsSincePassword >= 1) {
       popup.style.display = "flex";
       return;
     }
@@ -519,6 +519,18 @@ document.getElementById("chosenNumbers").innerText = `${col1}  |  ${col2}`;
     document.getElementById("chosenNumbers").innerText = "";
     resetPopup.style.display = "none";
   });
+    // גלילה למטה אם לא מולאו מספרים
+document.getElementById("drawBtn").addEventListener("click", function () {
+  const col1 = getSelectedNumber("col1Buttons");
+  const col2 = getSelectedNumber("col2Buttons");
+  
+  if (!col1 || !col2) {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  }
+}, true);
 </script>
 </body>
 </html>
