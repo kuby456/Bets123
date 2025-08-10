@@ -465,7 +465,13 @@ document.getElementById("chosenNumbers").innerText = `${col1}  |  ${col2}`;
         resultEl.innerHTML = `🎉 זכית! המספרים היו ${rand1} ו-${rand2}. זכית ב-${prize} ₪`;
       } else {
         balance -= betAmount;
-        resultEl.innerHTML = ` <br>איייי חחח<br>😬 לא נורא, אולי בפעם הבאה 😬`;
+        resultEl.innerHTML = ` <br>איייי חחח<br>
+
+ 😂
+
+לא נורא, אולי בפעם הבאה 😂
+
+`;
       }
 
       // שמירה ב-localStorage
@@ -482,7 +488,7 @@ document.getElementById("chosenNumbers").innerText = `${col1}  |  ${col2}`;
   // אישור סיסמה
   document.getElementById("passwordSubmit").addEventListener("click", function () {
     const pass = document.getElementById("passwordInput").value;
-    if (pass === "1238") {
+    if (pass === "1") {
       popup.style.display = "none";
       document.getElementById("passwordInput").value = "";
       betsSincePassword = 0; // איפוס מונה
