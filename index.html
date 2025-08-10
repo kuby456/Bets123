@@ -27,19 +27,42 @@
         margin-bottom: 15px;
     }
     .num-btn {
-        background: #ddd;
         border: none;
         padding: 15px;
         font-size: 1.2em;
         border-radius: 8px;
         cursor: pointer;
         transition: background 0.2s;
-    }
+  
+    
+        background: linear-gradient(
+    270deg,
+    #4A90E2,
+    #8e54e9,
+    #43e97b,
+    #f9d423,
+    #f857a6,
+    #4A90E2
+  );
+  background-size: 1200% 100%;
+  animation: rainbow-move 8s linear infinite;
+}
+    
+
+@keyframes rainbow-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+        
     .num-btn:hover {
         background: #bbb;
     }
     .selected {
-        background: #4CAF50 !important;
+        background: black !important;
         color: white;
         font-weight: bold;
     }
@@ -103,8 +126,7 @@
         box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
     #drawBtn {
-    background: linear-gradient(90deg, #36b37e 40%, #00b8d9 100%);
-    color: #fff;
+        color: #fff;
     border: none;
     border-radius: 6px;
     padding: 12px 30px;
@@ -116,8 +138,86 @@
     box-shadow: 0 1px 6px #0001;
     letter-spacing: 1px;
     direction: rtl;
+        background: linear-gradient(
+    270deg,
+    #4A90E2,
+    #8e54e9,
+    #43e97b,
+    #f9d423,
+    #f857a6,
+    #4A90E2
+  );
+  background-size: 1200% 100%;
+  animation: rainbow-move 4s linear infinite;
 }
 
+@keyframes rainbow-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+}
+.gio {
+  border: none;
+  margin: 32px 0;
+  height: 4px;
+  width: 100%;
+  opacity: 0.85;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(74, 144, 226, 0.1);
+  background: linear-gradient(
+    270deg,
+    #4A90E2,
+    #8e54e9,
+    #43e97b,
+    #f9d423,
+    #f857a6,
+    #4A90E2
+  );
+  background-size: 1200% 100%;
+  animation: rainbow-move 4s linear infinite;
+}
+
+@keyframes rainbow-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+    .gio2 {
+  border: none;
+  margin: 32px auto;
+  height: 4px;
+  width: 38%;
+  opacity: 0.85;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(74, 144, 226, 0.1);
+  background: linear-gradient(
+    270deg,
+    #4A90E2,
+    #8e54e9,
+    #43e97b,
+    #f9d423,
+    #f857a6,
+    #4A90E2
+  );
+  background-size: 1200% 100%;
+  animation: rainbow-move 4s linear infinite;
+}
+
+@keyframes rainbow-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
 #drawBtn:hover {
     background: linear-gradient(90deg, #00b8d9 40%, #36b37e 100%);
     transform: translateY(-2px) scale(1.04);
@@ -173,12 +273,12 @@ label {
     <h3>מאזן רווח/הפסד: <span id="balance">0</span> ₪</h3>
 
     <!-- 4️⃣ בחירת מספרים -->
-    <h3>בחר מספר לעמודה 1</h3>
+    <hr class="gio">
     <div class="numbers" id="col1Buttons"></div>
 
-    <h3>בחר מספר לעמודה 2</h3>
+    <hr class="gio2">
     <div class="numbers" id="col2Buttons"></div>
-
+<hr class="gio">
 </div>
 
 <!-- חלון סיסמה -->
@@ -366,7 +466,7 @@ document.getElementById("chosenNumbers").innerText = `${col1}  |  ${col2}`;
         resultEl.innerHTML = `🎉 זכית! המספרים היו ${rand1} ו-${rand2}. זכית ב-${prize} ₪`;
       } else {
         balance -= betAmount;
-        resultEl.innerHTML = ` איייי חחח<br>😬<br> לא נורא, אולי בפעם הבאה 😬`;
+        resultEl.innerHTML = ` <br>איייי חחח<br>😬 לא נורא, אולי בפעם הבאה 😬`;
       }
 
       // שמירה ב-localStorage
